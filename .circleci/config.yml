@@ -17,6 +17,7 @@ jobs:
       - run:
           name: Build Docker image
           command: | 
+            sudo su -
             docker build -t nodejswebapp -t rockwang415/nodejswebapp1:latest .
             echo $DOCKER_PASSWORD | docker login -u rockwang666@163.com --password-stdin
             docker push rockwang415/nodejswebapp1:latest
